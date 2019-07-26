@@ -2,10 +2,20 @@
   "name": "note-app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.10.1",
+    "node": "11.15.0"
+  },
   "dependencies": {
+    "history": "^4.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
