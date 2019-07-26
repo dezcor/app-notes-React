@@ -42,23 +42,25 @@ class App extends Component {
           </div>
         </nav>
         <div className="container mt-5">
-          {alert && alert.message &&
-            <div className={`alert alert-dismissible ${alert.type}`} >
-              {alert.message}
-              <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div>
+            {alert && alert.message &&
+              <div className={`alert alert-dismissible ${alert.type}`} >
+                {alert.message}
+                {/* <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button> */}
+              </div>
+            }
             </div>
-          }
-          <PrivateRoute exact path = "/" component={Home} />
-          <PrivateRoute path = "/create-note" component={NewNote}/>
-          <PrivateRoute path ="/note/edit/:id" component={editNote} />
-          <Route path="/login" component={Login}/>
-          <Route path="/register" component={register}/>
-          <Route path="**" render={() => <div>
-            <Redirect to={'/'}></Redirect>
-            </div>
-          }/>
+            <PrivateRoute exact path = "/" component={Home} />
+            <PrivateRoute path = "/create-note" component={NewNote}/>
+            <PrivateRoute path ="/note/edit/:id" component={editNote} />
+            <Route path="/login" component={Login}/>
+            <Route path="/register" component={register}/>
+            <Route path="**" render={() => <div>
+              <Redirect to={'/'}></Redirect>
+              </div>
+            }/>
         </div>
       </Router>
       </div>
@@ -68,7 +70,7 @@ class App extends Component {
 
 function mapState(state){
   const { alert } = state;
-  return { alert};
+  return { alert };
 }
 
 const actionCreators = {
